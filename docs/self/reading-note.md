@@ -1,7 +1,35 @@
 
 
 
+## 设定nvm中node的默认版本
+`nvm alias default 8.15.1`
 
+KeystoneJS
+ElementalUI
+
+## import FontFaceObserver from 'fontfaceobserver';
+Webfont loading. Simple, small, and efficient.
+https://github.com/bramstein/fontfaceobserver
+
+## import 'sanitize.css/sanitize.css';
+A best-practices CSS foundation https://csstools.github.io/sanitize.css
+
+## import { ConnectedRouter } from 'connected-react-router';
+A Redux binding for React Router v4
+https://github.com/supasate/connected-react-router#readme
+
+## react-intl
+https://github.com/formatjs/react-intl
+Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations.
+
+## createSelector(...inputSelectors | [inputSelectors], resultFunc)
+https://github.com/reduxjs/reselect#readme
+Selector library for Redux
+Takes one or more selectors, or an array of selectors, computes their values and passes them as arguments to resultFunc.
+
+## history
+Manage session history with JavaScript
+https://github.com/ReactTraining/history
 
 ## connected-react-router
 A Redux binding for React Router v4

@@ -15,6 +15,7 @@ export const initialState = {
   username: '',
 };
 
+// change name
 /* eslint-disable default-case, no-param-reassign */
 const homeReducer = (state = initialState, action) =>
   produce(state, draft => {
