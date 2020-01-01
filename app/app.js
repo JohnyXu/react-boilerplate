@@ -11,10 +11,21 @@ import '@babel/polyfill';
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { Provider } from 'react-redux';
+
+// A Redux binding for React Router v4
+// https://github.com/supasate/connected-react-router#readme
 import { ConnectedRouter } from 'connected-react-router';
+
+// Webfont loading. Simple, small, and efficient.
+// https://github.com/bramstein/fontfaceobserver
 import FontFaceObserver from 'fontfaceobserver';
+
+// Manage session history with JavaScript
 import history from 'utils/history';
+
+// A best-practices CSS foundation https://csstools.github.io/sanitize.css
 import 'sanitize.css/sanitize.css';
 
 // Import root app

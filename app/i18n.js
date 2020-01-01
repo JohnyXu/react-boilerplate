@@ -7,6 +7,7 @@
  *   script `extract-intl`, and must use CommonJS module syntax
  *   You CANNOT use import/export in this file.
  */
+// Internationalize React apps. This library provides React components and an API to format dates, numbers, and strings, including pluralization and handling translations.
 const addLocaleData = require('react-intl').addLocaleData; //eslint-disable-line
 const enLocaleData = require('react-intl/locale-data/en');
 const deLocaleData = require('react-intl/locale-data/de');
@@ -26,15 +27,20 @@ const appLocales = [
 ];
 
 const formatTranslationMessages = (locale, messages) => {
+  // 默认语言
   const defaultFormattedMessages =
     locale !== DEFAULT_LOCALE
       ? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
       : {};
+
+  // deal with the language
   const flattenFormattedMessages = (formattedMessages, key) => {
+    // 格式化处理过的 初始值 {} 筛选默认语言和别的可支持语言
     const formattedMessage =
       !messages[key] && locale !== DEFAULT_LOCALE
         ? defaultFormattedMessages[key]
         : messages[key];
+    // 返回处理过的语言，比如中文版本，德语版本
     return Object.assign(formattedMessages, { [key]: formattedMessage });
   };
   return Object.keys(messages).reduce(flattenFormattedMessages, {});

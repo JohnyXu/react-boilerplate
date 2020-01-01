@@ -11,6 +11,8 @@ const selectLanguage = state => state.language || initialState;
  * Select the language locale
  */
 
+// createSelector(...inputSelectors | [inputSelectors], resultFunc)
+// Takes one or more selectors, or an array of selectors, computes their values and passes them as arguments to resultFunc.
 const makeSelectLocale = () =>
   createSelector(
     selectLanguage,
