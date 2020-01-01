@@ -1,5 +1,8 @@
 import React from 'react';
+
+// Copies non-react specific statics from a child component to a parent component
 import hoistNonReactStatics from 'hoist-non-react-statics';
+
 import { ReactReduxContext } from 'react-redux';
 
 import getInjectors from './reducerInjectors';

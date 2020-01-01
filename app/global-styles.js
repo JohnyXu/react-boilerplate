@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+// 全局的样式定义
 const GlobalStyle = createGlobalStyle`
   html,
   body {

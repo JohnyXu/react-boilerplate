@@ -2,7 +2,7 @@ import { conformsTo, isFunction, isObject } from 'lodash';
 import invariant from 'invariant';
 
 /**
- * Validate the shape of redux store
+ * Validate the shape of redux store 验证store的有效性，store是否符合shape结构
  */
 export default function checkStore(store) {
   const shape = {

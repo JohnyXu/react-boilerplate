@@ -14,7 +14,7 @@ function parseJSON(response) {
 
 /**
  * Checks if a network request came back fine, and throws an error if not
- *
+ * 抛出异常
  * @param  {object} response   A response from a network request
  *
  * @return {object|undefined} Returns either the response, or throws an error

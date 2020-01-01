@@ -5,8 +5,10 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
+// 全局状态
 const selectGlobal = state => state.global || initialState;
 
+// 全局路由
 const selectRouter = state => state.router;
 
 const makeSelectCurrentUser = () =>
@@ -33,6 +35,7 @@ const makeSelectRepos = () =>
     globalState => globalState.userData.repositories,
   );
 
+// 用户的location
 const makeSelectLocation = () =>
   createSelector(
     selectRouter,

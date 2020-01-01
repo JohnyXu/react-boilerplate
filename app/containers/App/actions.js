@@ -6,7 +6,8 @@
  * we have these actions which are the only way your application interacts with
  * your application state. This guarantees that your state is up to date and nobody
  * messes it up weirdly somewhere.
- *
+ * uni-directional 单向
+ * weirdly 怪异的
  * To add a new Action:
  * 1) Import your constant
  * 2) Add a function like this:
@@ -30,7 +31,7 @@ export function loadRepos() {
 
 /**
  * Dispatched when the repositories are loaded by the request saga
- *
+ * Dispatched调度
  * @param  {array} repos The repository data
  * @param  {string} username The current username
  *

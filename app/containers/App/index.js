@@ -7,7 +7,11 @@
  */
 
 import React from 'react';
+
+// A document head manager for React 处理Html的head部分的显示
+// https://github.com/nfl/react-helmet
 import { Helmet } from 'react-helmet';
+
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
@@ -19,6 +23,7 @@ import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
 
+// App的css样式 纵向布局
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
   margin: 0 auto;
@@ -38,6 +43,7 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Header />
+      {/* 路由切换 */}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />

@@ -23,6 +23,7 @@ export const initialState = {
 /* eslint-disable default-case, no-param-reassign */
 const appReducer = (state = initialState, action) =>
   produce(state, draft => {
+    // 处理分发的action 加载，加载成功，加载失败
     switch (action.type) {
       case LOAD_REPOS:
         draft.loading = true;

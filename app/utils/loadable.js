@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 
+// 懒加载实现
 const loadable = (importFunc, { fallback = null } = { fallback: null }) => {
   const LazyComponent = lazy(importFunc);
 
