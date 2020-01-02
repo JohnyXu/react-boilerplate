@@ -1,11 +1,13 @@
 const shell = require('shelljs');
 const addCheckMark = require('./helpers/checkmark.js');
 
+// 检测git环境
 if (!shell.which('git')) {
   shell.echo('Sorry, this script requires git');
   shell.exit(1);
 }
 
+// 如果模版路径不存在
 if (!shell.test('-e', 'internals/templates')) {
   shell.echo('The example is deleted already.');
   shell.exit(1);
@@ -14,12 +16,14 @@ if (!shell.test('-e', 'internals/templates')) {
 process.stdout.write('Cleanup started...');
 
 // Reuse existing LanguageProvider and i18n tests
+// 复用i18n的测试文件
 shell.mv(
   'app/containers/LanguageProvider/tests',
   'internals/templates/containers/LanguageProvider',
 );
 shell.cp('app/tests/i18n.test.js', 'internals/templates/tests/i18n.test.js');
 
+// 清理app下的文件
 // Cleanup components/
 shell.rm('-rf', 'app/components/*');
 

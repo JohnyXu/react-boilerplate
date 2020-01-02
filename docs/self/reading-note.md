@@ -62,6 +62,17 @@ api： readline.cursorTo
 
 ## shelljs
 Nodejs 版本的shell命令行工具
+
+test(expression)
+'-b', 'path': true if path is a block device
+'-c', 'path': true if path is a character device
+'-d', 'path': true if path is a directory
+'-e', 'path': true if path exists
+'-f', 'path': true if path is a regular file
+'-L', 'path': true if path is a symbolic link
+'-p', 'path': true if path is a pipe (FIFO)
+'-S', 'path': true if path is a socket
+
 ShellJS is a portable (Windows/Linux/macOS) implementation of Unix shell commands on top of the Node.js API. You can use it to eliminate your shell script's dependency on Unix while still keeping its familiar and powerful commands. You can also install it globally so you can run it from outside Node projects - say goodbye to those gnarly Bash scripts
 https://github.com/shelljs/shelljs
 Portable Unix shell commands for Node.js
