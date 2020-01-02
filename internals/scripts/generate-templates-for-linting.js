@@ -376,7 +376,7 @@ async function generateLanguage(language) {
 /**
  * Run
  */
-/* eslint-disable func-naes */
+/* eslint-disable func-names */
 (async function () {
   await generateComponents([
     { kind: 'component', name: 'Component', memo: false },

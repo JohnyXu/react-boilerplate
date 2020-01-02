@@ -80,6 +80,15 @@ This option throws an error when code is piped to ESLint.
 This option has no effect on code that uses a processor, unless the processor opts into allowing autofixes.
 If you want to fix code from stdin or otherwise want to get the fixes without actually writing them to the file, use the --fix-dry-run option.
 
+代码中禁用eslint检查
+/* eslint-disable */
+
+代码中开启eslint检查
+/* eslint-enable */
+
+eslint注释的下一行 关闭eslint检查 no-unused-expressions这条规则
+/* eslint-disable-next-line no-unused-expressions */
+
 ## stylelint
 规范css的书写，定义了一整套规则
 A mighty, modern style linter

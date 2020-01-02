@@ -2,8 +2,10 @@
 
 const shell = require('shelljs');
 const { exec } = require('child_process');
+
 const path = require('path');
 const fs = require('fs');
+
 const readline = require('readline');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
@@ -11,6 +13,8 @@ const chalk = require('chalk');
 const animateProgress = require('./helpers/progress');
 const addCheckMark = require('./helpers/checkmark');
 const addXMark = require('./helpers/xmark');
+
+// package.json 配置
 const npmConfig = require('./helpers/get-npm-config');
 
 process.stdin.resume();
@@ -32,7 +36,7 @@ function deleteFileInCurrentDir(file) {
 }
 
 /**
- * Checks if we are under Git version control
+ * Checks if we are under Git version control 判断是否在git版本仓库下面
  * @returns {Promise<boolean>}
  */
 function hasGitRepository() {
@@ -94,6 +98,7 @@ function removeGitRepository() {
  */
 function askUserIfWeShouldRemoveRepo() {
   return new Promise(resolve => {
+    // 命令行与用户交互
     process.stdout.write(
       '\nDo you want to start with a new repository? [Y/n] ',
     );
@@ -148,7 +153,7 @@ async function cleanCurrentRepository() {
 }
 
 /**
- * Check Node.js version
+ * Check Node.js version 检查nodejs的版本
  * @param {!number} minimalNodeVersion
  * @returns {Promise<any>}
  */
@@ -172,7 +177,7 @@ function checkNodeVersion(minimalNodeVersion) {
 }
 
 /**
- * Check NPM version
+ * Check NPM version 检查npm的版本
  * @param {!number} minimalNpmVersion
  * @returns {Promise<any>}
  */
@@ -196,7 +201,7 @@ function checkNpmVersion(minimalNpmVersion) {
 }
 
 /**
- * Install all packages
+ * Install all packages 安装所有的dependencies
  * @returns {Promise<any>}
  */
 function installPackages() {
@@ -215,6 +220,7 @@ function installPackages() {
         reject(new Error(err));
       }
 
+      // 完成回调
       clearInterval(interval);
       addCheckMark();
       resolve('Packages installed');
