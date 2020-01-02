@@ -1,6 +1,4 @@
 
-
-
 ## compare-versions
 https://github.com/omichelsen/compare-versions#readme
 Compare semver version strings to find which is greater, equal or lesser.
@@ -21,13 +19,6 @@ babel.transform(code, options, function(err, result) {
   result; // => { code, map, ast }
 });
 ```
-## cross-env
-只需要一个简单的命令，不用担心设置（windows，linux），对外保持统一的命令行接口
-Most Windows command prompts will choke when you set environment variables with NODE_ENV=production like that. (The exception is Bash on Windows, which uses native Bash.) Similarly, there's a difference in how windows and POSIX commands utilize environment variables. With POSIX, you use: $ENV_VAR and on windows you use %ENV_VAR%.
-cross-env makes it so you can have a single command without worrying about setting or using the environment variable properly for the platform. Just set it like you would if it's running on a POSIX system, and cross-env will take care of setting it properly.
-
-Cross platform setting of environment scripts
-https://www.npmjs.com/package/cross-env
 
 ## rimraf
 A `rm -rf` util for nodejs ,不给提示强制删除
@@ -137,6 +128,8 @@ Detect circular dependencies in modules compiled with Webpack
 
 ## 设定nvm中node的默认版本
 `nvm alias default 8.15.1`
+`nvm ls`
+`nvm use 8.15.1`
 
 KeystoneJS
 ElementalUI
@@ -160,8 +153,6 @@ export default createRootReducer
 
 ## The repository for high quality TypeScript type definitions.
 https://github.com/DefinitelyTyped/DefinitelyTyped#readme
-
-
 
 ## _.conformsTo(object, source)
 Checks if object conforms to source by invoking the predicate properties of source with the corresponding property values of object
