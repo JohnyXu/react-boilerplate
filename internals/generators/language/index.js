@@ -1,9 +1,10 @@
 /**
- * Language Generator
+ * Language Generator 新增语言生成器
  */
 const fs = require('fs');
 const { exec } = require('child_process');
 
+// 判断语言是否已存在
 function languageIsSupported(language) {
   try {
     fs.accessSync(`app/translations/${language}.json`, fs.F_OK);
@@ -82,12 +83,14 @@ module.exports = {
       pattern: /([a-z]+:\sformatTranslationMessages\('[a-z]+',\s[a-z]+TranslationMessages\),\n)(?!.*[a-z]+:\sformatTranslationMessages\('[a-z]+',\s[a-z]+TranslationMessages\),)/g,
       templateFile: './language/format-translation-messages.hbs',
     });
+
     actions.push({
       type: 'add',
       path: '../../app/translations/{{language}}.json',
       templateFile: './language/translations-json.hbs',
       abortOnFail: true,
     });
+
     actions.push({
       type: 'modify',
       path: '../../app/app.js',
@@ -97,6 +100,7 @@ module.exports = {
 
     if (!test) {
       actions.push(() => {
+        // 检测国际化语言处理
         const cmd = 'npm run extract-intl';
         exec(cmd, (err, result) => {
           if (err) throw err;

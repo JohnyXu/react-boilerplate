@@ -44,7 +44,6 @@
     "lint:js": "npm run lint:eslint -- . ",
     "lint:css": "stylelint app/**/*.js",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
-
     "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
     "lint:staged": "lint-staged",
 
@@ -52,8 +51,8 @@
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-
     "coveralls": "cat ./coverage/lcov.info | coveralls",
+
     "prettify": "prettier --write"
   },
   "browserslist": [

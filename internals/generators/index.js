@@ -1,11 +1,12 @@
 /**
  * generator/index.js
- *
+ * 导出一个函数生成器
  * Exports the generators so plop knows them
  */
 
 const fs = require('fs');
 const path = require('path');
+
 const { execSync } = require('child_process');
 const componentGenerator = require('./component/index.js');
 const containerGenerator = require('./container/index.js');
@@ -18,9 +19,11 @@ const languageGenerator = require('./language/index.js');
 const BACKUPFILE_EXTENSION = 'rbgen';
 
 module.exports = plop => {
+  // 生成器
   plop.setGenerator('component', componentGenerator);
   plop.setGenerator('container', containerGenerator);
   plop.setGenerator('language', languageGenerator);
+
   plop.addHelper('directory', comp => {
     try {
       fs.accessSync(
@@ -32,8 +35,12 @@ module.exports = plop => {
       return `components/${comp}`;
     }
   });
+
   plop.addHelper('curly', (object, open) => (open ? '{' : '}'));
+
   plop.setActionType('prettify', (answers, config) => {
+
+    // 文件夹路径
     const folderPath = `${path.join(
       __dirname,
       '/../../app/',
@@ -44,6 +51,7 @@ module.exports = plop => {
     )}`;
 
     try {
+      // 格式化这个文件夹下代码
       execSync(`npm run prettify -- "${folderPath}"`);
       return folderPath;
     } catch (err) {
@@ -52,6 +60,7 @@ module.exports = plop => {
   });
   plop.setActionType('backup', (answers, config) => {
     try {
+      // 备份文件
       fs.copyFileSync(
         path.join(__dirname, config.path, config.file),
         path.join(

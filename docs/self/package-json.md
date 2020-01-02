@@ -1,4 +1,42 @@
 
+## plop
+根据一套模版生成固定样式的初始代码框架,参考package.json中例子，比如ButtonTest,fr.json
+
+`plop --plopfile internals/generators/index.js` 指定模版文件
+参考 `internals/generators/index.js`
+1. description  对应选项的描述
+2. prompts  对应给出用户的选择项
+3. actions  用户的选择
+
+https://github.com/plopjs/plop
+https://github.com/plopjs/node-plop#readme
+Consistency Made Simple
+Micro-generator framework that makes it easy for an entire team to create files with a level of uniformity.
+
+## CoverAll
+[![Build Status][ci-image]][ci-url] [![Coverage Status][coveralls-image]][coveralls-url]
+
+Coveralls.io support for Node.js.
+Get the great coverage reporting of coveralls.io and
+add a cool coverage button (like the one above) to your README.
+Supported CI services: Travis CI, CodeShip, CircleCI, Jenkins, Gitlab CI, AppVeyor, Buildkite, GitHub Actions CI
+
+[ci-image]: https://github.com/nickmerwin/node-coveralls/workflows/Tests/badge.svg
+[ci-url]: https://github.com/nickmerwin/node-coveralls/actions?workflow=Tests
+[coveralls-image]: https://coveralls.io/repos/nickmerwin/node-coveralls/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/nickmerwin/node-coveralls?branch=master
+
+## jest
+https://github.com/facebook/jest
+Delightful JavaScript Testing.
+
+### jest --coverage
+打印测试覆盖率
+Indicates that test coverage information should be collected and reported in the output. This option is also aliased by --collectCoverage.
+
+### jest --watchAll
+当有文件改变时，跑所有的测试
+Watch files for changes and rerun all tests when something changes. If you want to re-run only the tests that depend on the changed files, use the --watch option.
 
 ## package.json 可指定task
 npm script `"lint:staged": "lint-staged",`
@@ -29,6 +67,18 @@ You can repeat the option to provide multiple patterns.
 The supported syntax is the same as for .eslintignore files,
 which use the same patterns as the .gitignore specification.
 You should quote your patterns in order to avoid shell interpretation of glob patterns.
+
+### --fix
+Automatically fix problems
+This option instructs ESLint to try to fix as many issues as possible.
+The fixes are made to the actual files themselves and
+only the remaining unfixed issues are output.
+Not all problems are fixable using this option,
+
+and the option does not work in these situations:
+This option throws an error when code is piped to ESLint.
+This option has no effect on code that uses a processor, unless the processor opts into allowing autofixes.
+If you want to fix code from stdin or otherwise want to get the fixes without actually writing them to the file, use the --fix-dry-run option.
 
 ## stylelint
 规范css的书写，定义了一整套规则
