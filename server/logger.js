@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 
+// 日志打印lib
 const chalk = require('chalk');
 const ip = require('ip');
 
@@ -16,21 +17,26 @@ const logger = {
 
   // Called when express.js app starts on given port w/o errors
   appStarted: (port, host, tunnelStarted) => {
+    // app start 日志输出 中间件
     console.log(`Server started ! ${chalk.green('✓')}`);
 
     // If the tunnel started, log that and the URL it's available at
+    // 开通隧道 应该是用来外网访问内网用的
     if (tunnelStarted) {
       console.log(`Tunnel initialised ${chalk.green('✓')}`);
     }
 
+    // 打印host和端口号
+    // console.log('logger.ip');
+    // console.log(ip);
     console.log(`
-${chalk.bold('Access URLs:')}${divider}
-Localhost: ${chalk.magenta(`http://${host}:${port}`)}
-      LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
-        (tunnelStarted
-          ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
-          : '')}${divider}
-${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
+      ${chalk.bold('Access URLs:')}${divider}
+      Localhost: ${chalk.magenta(`http://${host}:${port}`)}
+            LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
+              (tunnelStarted
+                ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
+                : '')}${divider}
+      ${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
     `);
   },
 };

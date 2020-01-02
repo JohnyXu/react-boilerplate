@@ -5,8 +5,12 @@ const logger = require('./logger');
 
 const argv = require('./argv');
 const port = require('./port');
+
+// 前端环境中间件
 const setup = require('./middlewares/frontendMiddleware');
 const isDev = process.env.NODE_ENV !== 'production';
+
+// ngrok
 const ngrok =
   (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
     ? require('ngrok')

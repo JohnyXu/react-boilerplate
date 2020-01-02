@@ -1,5 +1,18 @@
 
 
+## webpack rule常用项目处理
+js,css,font,svg,png,jpg,html,mp4等的常用配置和对应的html
+1. babel-loader 语法转换
+2. style-loader,css-loader,postcss-loader,sass-loader 添加css，css的js处理
+3. url-loader,file-loader
+4. svg-url-loader
+5. url-loader,image-webpack-loader url的base64处理，图片压缩处理
+6. html-loader
+
+
+## circular-dependency-plugin
+Detect circular dependencies in modules compiled with Webpack
+用webpack编译模块检测环依赖
 
 ## 设定nvm中node的默认版本
 `nvm alias default 8.15.1`

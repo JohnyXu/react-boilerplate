@@ -1,10 +1,19 @@
 // Important modules this config uses
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// generates a 'manifest.json' for your Progressive Web Application, with auto icon resizing and fingerprinting suppor
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+
+// This plugin is intended to provide an offline experience for webpack projects. It uses ServiceWorker, and AppCache as a fallback under the hood
 const OfflinePlugin = require('offline-plugin');
+
 const { HashedModuleIdsPlugin } = require('webpack');
+
+// This plugin uses terser to minify your JavaScript.压缩最小化JavaScript
 const TerserPlugin = require('terser-webpack-plugin');
+
+// Prepare compressed versions of assets to serve them with Content-Encoding.
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = require('./webpack.base.babel')({
@@ -25,6 +34,7 @@ module.exports = require('./webpack.base.babel')({
   optimization: {
     minimize: true,
     minimizer: [
+      // 压缩JavaScript代码
       new TerserPlugin({
         terserOptions: {
           warnings: false,
@@ -67,6 +77,7 @@ module.exports = require('./webpack.base.babel')({
 
   plugins: [
     // Minify and optimize the index.html
+    // 压缩html文件最小化
     new HtmlWebpackPlugin({
       template: 'app/index.html',
       minify: {
@@ -108,6 +119,7 @@ module.exports = require('./webpack.base.babel')({
       safeToUseOptionalCaches: true,
     }),
 
+    // 压缩文件 js，css，html
     new CompressionPlugin({
       algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
@@ -136,6 +148,7 @@ module.exports = require('./webpack.base.babel')({
       ],
     }),
 
+    // hash插件
     new HashedModuleIdsPlugin({
       hashFunction: 'sha256',
       hashDigest: 'hex',
