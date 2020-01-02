@@ -1,4 +1,8 @@
 
+## 修改git config user.name,user.email
+git config --list
+git config --global user.name "JohnyXu"
+git config --global user.email "ahstuxq@163.com"
 
 ## .editorconfig
 https://editorconfig.org/
