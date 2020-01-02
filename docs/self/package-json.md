@@ -1,4 +1,24 @@
 
+
+## .editorconfig
+https://editorconfig.org/
+EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs
+```js
+# editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+```
+
 ## plop
 根据一套模版生成固定样式的初始代码框架,参考package.json中例子，比如ButtonTest,fr.json
 
@@ -40,6 +60,8 @@ Watch files for changes and rerun all tests when something changes. If you want 
 
 ## package.json 可指定task
 npm script `"lint:staged": "lint-staged",`
+在提交之前执行npm命令：`"pre-commit": "lint:staged",`
+resolutions: 允许您覆盖特定嵌套依赖项的版本
 参考 lint-staged,对所有的js文件和json分别执行数组内命令
 ```json
 "lint-staged": {
