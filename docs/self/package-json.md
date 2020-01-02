@@ -1,4 +1,52 @@
 
+
+## package.json 可指定task
+npm script `"lint:staged": "lint-staged",`
+参考 lint-staged,对所有的js文件和json分别执行数组内命令
+```json
+"lint-staged": {
+  "*.js": [
+    "npm run lint:eslint:fix",
+    "git add --force"
+  ],
+  "*.json": [
+    "prettier --write",
+    "git add --force"
+  ]
+}
+```
+
+## eslint
+`npx eslint --ignore-path .gitignore --ignore-pattern internals/script -- .`
+### --ignore-path:Specify path of ignore file 指定忽略的路径
+This option allows you to specify the file to use as your .eslintignore
+By default, ESLint looks in the current working directory for .eslintignore
+You can override this behavior by providing a path to a different file.
+
+### --ignore-pattern
+This option allows you to specify patterns of files to ignore
+You can repeat the option to provide multiple patterns.
+The supported syntax is the same as for .eslintignore files,
+which use the same patterns as the .gitignore specification.
+You should quote your patterns in order to avoid shell interpretation of glob patterns.
+
+## stylelint
+规范css的书写，定义了一整套规则
+A mighty, modern style linter
+A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.
+understands the latest CSS syntax including custom properties and level 4 selectors
+extracts embedded styles from HTML, markdown and CSS-in-JS object & template literals
+parses CSS-like syntaxes like SCSS, Sass, Less and SugarSS
+has over 170 built-in rules to catch errors, apply limits and enforce stylistic conventions
+supports plugins so you can create your own rules or make use of plugins written by the community
+automatically fixes some violations (experimental feature)
+is well tested with over 15000 unit tests
+supports shareable configs that you can extend or create your own of
+is unopinionated so you can tailor the linter to your exact needs
+has a growing community and is used by Facebook, GitHub and WordPress
+https://github.com/stylelint/stylelint
+
+
 ## prettier
 `npm run prettify babel.config.js`
 格式化babel.config.js代码文件

@@ -29,6 +29,8 @@ const componentGen = plop.getGenerator('component');
 const containerGen = plop.getGenerator('container');
 const languageGen = plop.getGenerator('language');
 
+/* eslint-disable no-console */
+
 /**
  * Every generated component/container is preceded by this
  * @type {string}
@@ -67,6 +69,7 @@ function handleResult({ changes, failures }) {
  */
 function feedbackToUser(info) {
   return result => {
+
     console.info(chalk.blue(info));
     return result;
   };
@@ -373,6 +376,7 @@ async function generateLanguage(language) {
 /**
  * Run
  */
+/* eslint-disable func-naes */
 (async function () {
   await generateComponents([
     { kind: 'component', name: 'Component', memo: false },
@@ -383,3 +387,4 @@ async function generateLanguage(language) {
 
   await generateLanguage('fr').catch(reason => reportErrors(reason));
 })();
+/* eslint-enable func-names */
