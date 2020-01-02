@@ -11,6 +11,7 @@ function animateProgress(message, amountOfDots = 3) {
   return setInterval(() => {
     readline.cursorTo(process.stdout, 0);
     i = (i + 1) % (amountOfDots + 1);
+    // 生成...数组
     const dots = new Array(i + 1).join('.');
     process.stdout.write(message + dots);
   }, 500);

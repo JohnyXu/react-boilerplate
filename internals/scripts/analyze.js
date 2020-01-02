@@ -2,6 +2,8 @@
 
 const shelljs = require('shelljs');
 const chalk = require('chalk');
+
+// helpers
 const animateProgress = require('./helpers/progress');
 const addCheckMark = require('./helpers/checkmark');
 
@@ -16,6 +18,8 @@ shelljs.exec(
 // Called after webpack has finished generating the stats.json file
 function callback() {
   clearInterval(progress);
+  /* eslint-disable prefer-template */
+  // 控制台输出 process.stdout.write
   process.stdout.write(
     '\n\nOpen ' +
       chalk.magenta('http://webpack.github.io/analyse/') +
@@ -24,4 +28,5 @@ function callback() {
         '\n(Tip: ' + chalk.italic('CMD + double-click') + ' the link!)\n\n',
       ),
   );
+  /* eslint-enable */
 }
