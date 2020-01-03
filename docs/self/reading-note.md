@@ -1,14 +1,4 @@
 
-## compare-versions
-https://github.com/omichelsen/compare-versions#readme
-Compare semver version strings to find which is greater, equal or lesser.
-
-```js
-var compareVersions = require('compare-versions');
-compareVersions('10.1.8', '10.0.4'); //  1
-compareVersions('10.0.1', '10.0.1'); //  0
-compareVersions('10.1.1', '10.2.2'); // -1
-```
 
 ## @babel/core transform
 转换代码，可参考`scripts/extract-intl.js`
