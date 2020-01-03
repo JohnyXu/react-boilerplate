@@ -82,38 +82,38 @@
   "jest-dom": "3.1.3",
   "jest-styled-components": "6.3.1",
 
-  "lint-staged": "8.1.5",
+  "lint-staged": "8.1.5", // 在执行git提交时检测你的代码库，不符合规则不许提交
   "ngrok": "3.1.1",
   "node-plop": "0.18.0",
-  "null-loader": "0.1.1",
+  "null-loader": "0.1.1",//to silence modules imported by a dependency.
   "offline-plugin": "5.0.6",
   "plop": "2.3.0",
 
-  "pre-commit": "1.2.2",
-  "prettier": "1.17.0",
+  "pre-commit": "1.2.2",// commit的钩子，之前可以运行npm脚本
+  "prettier": "1.17.0",// 可配置的代码格式化工具
 
-  "react-app-polyfill": "0.2.2",
-  "react-test-renderer": "16.8.6",
-  "react-testing-library": "6.1.2",
+  "react-app-polyfill": "0.2.2", // 包含来不同的浏览器的polyfill
+  "react-test-renderer": "16.8.6", // 测试用来生成dom的快照
+  "react-testing-library": "6.1.2",// react测试库
 
-  "rimraf": "2.6.3",
-  "shelljs": "0.8.3",
+  "rimraf": "2.6.3", // rm -rf 的node版本
+  "shelljs": "0.8.3", // shell的node版本
 
-  "style-loader": "0.23.1",
-  "stylelint": "10.0.1",
-  "stylelint-config-recommended": "2.2.0",
-  "stylelint-config-styled-components": "0.1.1",
-  "stylelint-processor-styled-components": "1.6.0",
-  "svg-url-loader": "2.3.2",
-  "terser-webpack-plugin": "1.2.3",
-  "url-loader": "1.1.2",
+  "style-loader": "0.23.1", // 把css注入到dom中
+  "stylelint": "10.0.1", // css语法检测器
+  "stylelint-config-recommended": "2.2.0", // stylelint推荐的配置规则
+  "stylelint-config-styled-components": "0.1.1",//components配置规则
+  "stylelint-processor-styled-components": "1.6.0",//componets与处理器
+  "svg-url-loader": "2.3.2",// 把svg文件加载为utf-8字符串
+  "terser-webpack-plugin": "1.2.3",// 压缩javascript脚本文件
+  "url-loader": "1.1.2",// 把文件内容转换成base64 URIs.
 
-  "webpack": "4.30.0",
-  "webpack-cli": "3.3.0",
-  "webpack-dev-middleware": "3.6.2",
-  "webpack-hot-middleware": "2.24.3",
-  "webpack-pwa-manifest": "4.0.0",
-  "whatwg-fetch": "3.0.0"
+  "webpack": "4.30.0", // webpack打包程序
+  "webpack-cli": "3.3.0", // webpack 命令行
+  "webpack-dev-middleware": "3.6.2", // 开发中间件
+  "webpack-hot-middleware": "2.24.3", // 热重载中间件
+  "webpack-pwa-manifest": "4.0.0", // (PWA) Manifest Generator
+  "whatwg-fetch": "3.0.0" // promise版本的ajax请求
 }
 ```
 
