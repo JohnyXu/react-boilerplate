@@ -9,6 +9,7 @@ module.exports = {
     '@babel/preset-react',
   ],
   plugins: [
+    // babel转换插件 styled-components,class,dynamic-import
     'styled-components',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
@@ -17,6 +18,7 @@ module.exports = {
     production: {
       only: ['app'],
       plugins: [
+        // 生产环境处理
         'lodash',
         'transform-react-remove-prop-types',
         '@babel/plugin-transform-react-inline-elements',
@@ -24,6 +26,7 @@ module.exports = {
       ],
     },
     test: {
+      // 开发环境
       plugins: [
         '@babel/plugin-transform-modules-commonjs',
         'dynamic-import-node',

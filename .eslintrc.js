@@ -1,29 +1,48 @@
 const fs = require('fs');
 const path = require('path');
 
+// 读取格式化代码的配置文件选项
 const prettierOptions = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
 );
 
 module.exports = {
+  // 解析器
   parser: 'babel-eslint',
-  extends: ['airbnb', 'prettier', 'prettier/react'],
-  plugins: ['prettier', 'redux-saga', 'react', 'react-hooks', 'jsx-a11y'],
+  // 扩展规则合集
+  extends: [
+    'airbnb',
+    'prettier',
+    'prettier/react'
+  ],
+  // 插件合集
+  plugins: [
+    'prettier',
+    'redux-saga',
+    'react',
+    'react-hooks',
+    'jsx-a11y'
+  ],
+  // 平台
   env: {
     jest: true,
     browser: true,
     node: true,
     es6: true,
   },
+  // 解析选项
   parserOptions: {
+    // 指定要使用的es语法版本
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
+      // 开启jsx语法
       jsx: true,
     },
   },
   rules: {
     'prettier/prettier': ['error', prettierOptions],
+    // 需要函数体
     'arrow-body-style': [2, 'as-needed'],
     'class-methods-use-this': 0,
     'import/imports-first': 0,
